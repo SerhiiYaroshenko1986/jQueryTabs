@@ -22,6 +22,7 @@
     height: 540px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #212534;
+    position: relative;
 }
 
 .game__toggle {
@@ -93,10 +94,17 @@
 
 /* FOOTER*/
 
+.footer__wrap {
+    position: absolute;
+    top: 83%;
+    left: 5%;
+    z-index: 100;
+}
+
 .footer {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .foter__price_wrap {
@@ -174,12 +182,9 @@
 
 .progresive__ring {
     position: absolute;
-    top: -20%;
-    bottom: 0;
-    left: 85%;
+    top: 23%;
+    left: 80%;
 }
-
-.progress-ring {}
 
 .progress-ring__circle {
     transition: 0.35s stroke-dashoffset;
@@ -187,9 +192,9 @@
     transform-origin: 50% 50%;
 }
 
-#score {
+.score {
     position: relative;
-    bottom: 19%;
+    bottom: 52px;
     right: -18%;
     font-size: 20px;
     color: #aaadbb;

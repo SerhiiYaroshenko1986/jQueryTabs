@@ -1,9 +1,28 @@
 $(document).ready(function() {
-    $(".game__toggle_item").on('click', function() {
+    $(".game__toggle_item").on('click', function(event) {
         $(".game__toggle_item").removeClass("active");
         $(this).addClass("active");
-    });
+        console.log(event.target.id)
+        if (event.target.id === "info" || event.target.id === "svg1" || event.target.id === "par1") {
+            $(".firstTab").show();
+            $(".secondTab").hide();
+            $(".thirdTab").hide();
+        }
+        if (event.target.id === "raiting" || event.target.id === "svg2" || event.target.id === "par2") {
+            $(".firstTab").hide();
+            $(".secondTab").show();
+            $(".thirdTab").hide();
+        }
+        if (event.target.id === "buy" || event.target.id === "svg3" || event.target.id === "par3") {
+            $(".firstTab").hide();
+            $(".secondTab").hide();
+            $(".thirdTab").show();
+        }
 
+    });
+    // $(".click").on("click", function(event) {
+
+    // })
 
     circle = document.querySelector('circle');
     radius = circle.r.baseVal.value;
@@ -39,9 +58,22 @@ $(document).ready(function() {
             rezult = 100;
             console.log(rezult)
         }
-        $('#score').text((rezult / 10).toFixed(1))
+        $('.score').text((rezult / 10).toFixed(1))
         setProgress(rezult);
     })
     console.log(rezult)
     setProgress(rezult);
+    // $(".game__toggle_item").on("click", function(event) {
+    //     let target = event.target.id;
+    //     console.log(target)
+    //     if (target.is("#info")) {
+    //         $(this).replaceWith(".firstTab");
+    //     }
+    //     if (target.is("#raiting")) {
+    //         $(this).replaceWith(".secondTab");
+    //     }
+    //     if (target.is("#buy")) {
+    //         $(this).replaceWith(".thirdTab");
+    //     }
+    // })
 });
